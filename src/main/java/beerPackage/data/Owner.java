@@ -3,20 +3,22 @@ package beerPackage.data;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
 
+@RequiredArgsConstructor
 @Entity
 public class Owner {
 
     @Id
     @GeneratedValue
     private @Getter @Setter int id;
+    @NonNull
     private @Getter @Setter String name;
-    @OneToOne(mappedBy = "ownerThatOwnsDog")
-    private @Getter @Setter Dog dog;
+    @OneToMany(mappedBy = "ownerThatOwnsDog")
+    private @Getter @Setter List<Dog> dogs;
 
     @Override
     public String toString() {

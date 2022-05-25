@@ -3,12 +3,12 @@ package beerPackage.data;
 import javax.persistence.*;
 
 @Entity
-@SequenceGenerator(name="villain_sequence", initialValue=1, allocationSize=100)
-@Table(name = "Villain")
+//@SequenceGenerator(name="villain_sequence", initialValue=1, allocationSize=100)
+//@Table(name = "Villain")
 public class SuperVillain {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="villain_sequence")
+    @GeneratedValue//(strategy= GenerationType.SEQUENCE, generator="villain_sequence")
     private int id;
     @Column(unique = true)
     private String name;

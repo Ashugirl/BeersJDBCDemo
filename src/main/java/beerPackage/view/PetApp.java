@@ -10,19 +10,28 @@ public class PetApp {
     public static void main(String[] args) {
 
 
-        //Owner owner = new Owner("Tintin");
-
-
         EntityManager em = EMFactory.getEMF().createEntityManager();
 
-        //owner1 = em.find(Owner.class, 1);
+    //    Owner owner = new Owner("Jon");
 
-        //Dog dog = new Dog(1, "Odie", owner1);
-
-        em.getTransaction().begin();
-        //em.persist(dog);
+       Dog dog = em.find(Dog.class, 2);
+       em.getTransaction().begin();
+        em.remove(dog);
         em.getTransaction().commit();
 
 
+
+
+
+       // dog = em.find(Dog.class, 1);
+     // Dog dog = new Dog(1, "Bobbie", owner);
+//
+//        em.getTransaction().begin();
+//        em.persist(dog);
+//        em.getTransaction().commit();
+
+//       System.out.println(owner.getDog());
     }
 }
+
+

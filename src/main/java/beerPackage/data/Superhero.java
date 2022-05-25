@@ -12,7 +12,6 @@ public class Superhero {
     private String name;
     private String superPower;
     @OneToOne
-    @JoinColumn(name = "archnemesis_id")
     private SuperVillain archnemesis;
 
     public SuperVillain getArchnemesis() {

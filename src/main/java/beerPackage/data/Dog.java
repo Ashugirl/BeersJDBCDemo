@@ -2,24 +2,21 @@ package beerPackage.data;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
-@AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 @ToString
-
+@RequiredArgsConstructor
 @Entity
 public class Dog {
 
     @Id
+    @GeneratedValue
     private @Getter @Setter int id;
     @NonNull
     private @Getter @Setter String name;
-    private @Getter @Setter
-    @OneToOne
-    Owner ownerThatOwnsDog;
+    @NonNull
+    @ManyToOne(cascade = CascadeType.REMOVE)
+    private @Getter @Setter Owner ownerThatOwnsDog;
 }

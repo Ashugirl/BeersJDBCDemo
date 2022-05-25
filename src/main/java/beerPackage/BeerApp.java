@@ -17,12 +17,12 @@ public class BeerApp {
         EntityManager em = emf.createEntityManager();
 
         Superhero superman = new Superhero("Superman", "Everything");
-        SuperVillain lexLuthor = new SuperVillain("Lex Luthor", "Money");
-        Superhero theTick = new Superhero("The Tick", "obtuseness");
+        SuperVillain boris = new SuperVillain("Boris", "Russian accent");
+       // Superhero theTick = new Superhero("The Tick", "obtuseness");
 
         //create
         em.getTransaction().begin();
-        em.persist(lexLuthor);
+        em.persist(boris);
         em.getTransaction().commit();
 
 
